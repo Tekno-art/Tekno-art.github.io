@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* Konten Atas */
+
+.konten-atas nav{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+nav img{
+    width: 40%;
+    padding-left: 30%;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search a{
+    text-decoration: none;
+    color: #212121;
+    font-size: 1.5rem;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+.navbar li a{
+    color: #212121;
+    text-decoration: none;
+    border-bottom: 2px solid #212121;
+    padding-bottom: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: .5s all;
+}
+.navbar li a:hover{
+    padding-bottom: 20px;
+}
