@@ -3,9 +3,13 @@
     margin: 0;
 }
 /* Konten Atas */
-
+.konten-atas{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
 .konten-atas nav{
-    width: 90%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
 }
@@ -39,4 +43,35 @@ nav img{
 }
 .navbar li a:hover{
     padding-bottom: 20px;
+}
+.kontainer-image{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    top: 0;
+}
+.space-img{
+    filter: brightness(0.6);
+}
+.space1{
+    position: absolute;
+    width: 100%;
+    z-index: 20;
+    top: 86%;
+    height: 80vh;
+}
+.space2{
+    position: absolute;
+    width: 100%;
+    top: 47%;
+    height: 80vh;
+    z-index: 19;
+}
+.space3{
+    position: absolute;
+    width: 100%;
+    top: 4%;
+    z-index: 18;
+    height: 82vh;
+    box-shadow: 0 0 20px #212121;
 }
