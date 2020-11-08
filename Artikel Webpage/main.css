@@ -6,7 +6,7 @@ section{
     width: 100%;
     height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(to top left, #fff, #6454f0);
+    background: #fff;
     position: fixed;
 }
 nav{
@@ -17,7 +17,7 @@ nav{
     height: 10vh;
     position: fixed;
     z-index: 99;
-    background: linear-gradient(to left, #bdb7f5, #6454f0);
+    background: #fff;
 }
 /* Homenya==== */
 .home{
@@ -31,7 +31,7 @@ nav{
 }
 .home a{
     text-decoration: none;
-    color: #fff;
+    color: #212121;
     font-weight: bold;
     font-size: 1.5em;
     transition: .5s all;
@@ -43,11 +43,15 @@ nav{
 /* Searchnya==== */
 .search{
     flex-basis: 50%;
+    margin-left: 10%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 .search input{
     outline: none;
     border-radius: 5px;
-    border: 2px solid #c1bbfc;
+    border: none;
     background: transparent;
     width: 60%;
     height: 5vh;
@@ -57,18 +61,25 @@ nav{
     font-weight: bold;
 
 }
-.search button{
-    width: 15%;
-    border: 2px solid #bae6f3;
-    height: 5.5vh;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    background: #aba3ee96;
-    transition: .5s all;
+.search::before{
+    content: '';
+    width: 170px;
+    height: 2px;
+    position: absolute;
+    top: 35px;
+    left: 60px;
+    background: #212121;
+    z-index: 99;
 }
-.search button:hover{
-    background: transparent;
+.search i{
+    width: 15%;
+    height: 5.5vh;
+    cursor: pointer;
+    transition: .5s all;
+    font-size: 1.3rem;
+}
+.search i:hover{
+    text-transform: 0 0 5px #212121;
 }
 .navbar ul{
     display: flex;
@@ -79,7 +90,7 @@ nav{
     transition: .5s all;
 }
 .navbar ul li a{
-    color: #fff;
+    color: #212121;
     text-decoration: none;
     font-size: 1.3em;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -92,12 +103,13 @@ nav{
 .konten{
     width: 50%;
     height: 200vh;
-    background: #fff;
+    background: #b310f3;
     position: absolute;
     right: 0;
     top: 20%;
     border-radius: 20px;
-    box-shadow: 0 0 15px #413ef0;
+    z-index: 99;
+    box-shadow: -5px 0 5px #0c121f;
 }
 .card{
     width: 80%;
@@ -109,11 +121,12 @@ nav{
 }
 .thumb img{
     width: 30%;
-    border: 2px solid #212121;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
     padding: 20px;
 }
 .link a{
-    color: #212121;
+    color: #fff;
     font-size: 1.5em;
     font-weight: 600;
     font-family: monospace;
@@ -126,7 +139,7 @@ nav{
     text-shadow: 0 0 10px #212121;
 }
 .link h1{
-    color: #212121;
+    color: #ffffff;
     font-size: 1.3em;
     font-weight: 200;
     font-family: monospace;
@@ -135,8 +148,8 @@ nav{
     left: 40%;
     width: 30%;
     transition: .5s all;
-    border-bottom: 2px solid #221122;
-    border-right: 2px solid #221122;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
     padding-bottom: 10px;
 }
 
@@ -152,32 +165,154 @@ nav{
 .box-two{
     width: 60%;
     position: absolute;
-    top: 40%;
-    left: 20%;
-    background: #d12222;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #d12222;
+    top: 30%;
+    left: 7%;
 }
 .box-two h1{
     font-size: 1.2em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: normal;
+    font-weight: bold;
     padding: 20px;
-    color: #bafae5;
+    color: #212121;
+}
+.teks-3{
+    width: 50%;
+    border-left: 2px solid #105ff3;
+    top: 65%;
+    left: 25%;
+    opacity: 0.7;
+    font-size: 10px;
+    color: #156fe6;
 }
 .box-one{
-    width: 30%;
-    height: 20vh;
+    width: 70%;
     position: absolute;
-    top: 5%;
+    top: -35%;
     left: -5%;
-    background: #056d96;
-    border-radius: 5px;
-    font-size: 1.2em;
+    font-size: 3rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: normal;
-    padding: 20px;
-    color: #bafae5;
-    transform: rotate(90deg);
-    box-shadow: 10px 10px 0 #fff;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 2px #212121;
+}
+.bg-liquid{
+    position: fixed;
+    top: 65%;
+    left: 0;
+    width: 80%;
+}
+.bg-liquid img{
+    width: 100%;
+}
+
+/* Media Querys */
+
+@media only screen and (max-width : 770px){
+    .box-one{
+        font-size: 2rem;
+        width: 100%;
+    }
+    .box-two{
+        width: 100%;
+    }
+    .box-two h1{
+        font-size: .8rem;
+    }
+    .teks-3{
+        top: 55%;
+    }
+    .search{
+        display: none;
+    }
+    .link h1{
+        color: #ffffff;
+        font-size: 1em;
+        width: 40%;
+        left: 45%;
+        padding-bottom: 5px;
+    }
+    .link a{
+        font-size: 1rem;
+        left: 45%;
+        width: 60%;
+    }
+    .bg-liquid{
+        top: 76%;
+    }
+}
+@media only screen and (max-width : 430px){
+    .box-one{
+        font-size: 1.5rem;
+        top: -50%;
+    }
+    .teks-3{
+        display: none;
+    }
+    .box-two{
+        top: -20%;
+        width: 120%;
+    }
+    .box-two h1{
+        font-size: .8rem;
+    }
+    .konten{
+        width: 100%;
+        height: 80vh;
+        top: 40%;
+    }
+}
+@media only screen and (max-width : 380px){
+    .box-one{
+        font-size: 1.3rem;
+        top: -50%;
+    }
+    .teks-3{
+        display: none;
+    }
+    .box-two{
+        top: -20%;
+        width: 150%;
+    }
+    .box-two h1{
+        font-size: .8rem;
+    }
+    .link h1{
+        top: 10%;
+    }
+    .konten{
+        width: 100%;
+        height: 80vh;
+        top: 40%;
+    }
+}
+@media only screen and (max-width : 320px){
+    .box-one{
+        font-size: 30px;
+        top: -60%;
+        width: 200%;
+    }
+    .teks-3{
+        display: none;
+    }
+    .box-two{
+        top: -20%;
+        width: 150%;
+    }
+    .box-two h1{
+        font-size: .8rem;
+    }
+    .link h1{
+        top: 10%;
+        font-size: 10px;
+        left: 50%;
+        padding-bottom: 0px;
+    }
+    .link a{
+        font-size: 14px;
+    }
+    .konten{
+        width: 100%;
+        height: 80vh;
+        top: 40%;
+    }
 }
