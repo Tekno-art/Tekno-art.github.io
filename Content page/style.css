@@ -92,7 +92,7 @@ nav img{
 .mid{
     width: 100%;
     height: 120vh;
-    background: #ccc;
+    background: #fff;
     position: absolute;
     top: 85%;
     z-index: 23;
@@ -104,36 +104,67 @@ nav img{
     width: 100%;
     left: 0;
     z-index: 20;
-    background: linear-gradient(to top, #ccc, transparent);
+    background: linear-gradient(to top, #fff, transparent);
 }
 
 .kontainer-content{
-    width: 100%;
-    height: 120vh;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 2fr 2fr 1.3fr;
-    grid-template-rows: 1fr 3fr 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 3fr 3fr 0.7fr 0.1fr;
     grid-template-areas: 
         "artikel artikel nav"
-        "artikel artikel nav"
-        "artikel artikel nav"
-        "download download nav";
-    position: relative;
+        "artikel artikel ."
+        "artikel artikel ."
+        "download download download"
+        "footer footer footer";
+    column-gap: 20px;
 }
 .isi-artikel{
     grid-area: artikel;
 }
-.isi-artikel p{
+.bagian-pertama{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 3%;
-    margin-top: 10px;
-    border-right: 2px solid #212121;
-    border-top: 2px solid #212121;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 5px #212121;
     background: #fff;
+    margin-left: 2%;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #212121;
+    padding-bottom: 30px;
+}
+.bagian-pertama a{
+    text-decoration: none;
+}
+.bagian-kedua, .bagian-ketiga, .bagian-keempat, .bagian-kelima{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #fff;
+    margin-left: 2%;
+    font-size: 1.2rem;
+    display: block;
+}
+.bagian-kelima{
+    border-top: 1px solid #212121;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+.bagian-kedua img{
+    width: 40%;
+}
+.bagian-ketiga img, .bagian-keempat img{
+    display: block;
+    width: 400px;
+    height: 250px;
+    margin-left: 20%;
+    box-shadow: 0 10px 10px #212121;
+}
+.judul1{
+    font-size: 2rem;
+    border-bottom: 1px solid #212121;
+    padding-bottom: 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 4%;
+}
+.bold{
+    font-weight: bold;
 }
 .pilihan-artikel{
     grid-area: nav;
@@ -243,15 +274,10 @@ small{
     text-shadow: 0 0 5px #212121;
 }
 footer{
-    width: 100%;
-    height: 8vh;
+    grid-area: footer;
     background: #5c97f0;
-    position: absolute;
-    z-index: 19;
-    top: 1250px;
     text-align: center;
     font-family: monospace;
-    padding-top: 10px;
 }
 footer a{
     text-decoration: none;
@@ -297,6 +323,37 @@ footer a:hover{
     }
 }
 @media only screen and (max-width : 430px){
+    .kontainer-content{
+        height: 850vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr 5fr 1fr .7fr .1fr;
+        grid-template-areas: 
+            "artikel"
+            "artikel"
+            "nav"
+            "download"
+            "footer";
+        column-gap: 10px;
+    }
+    footer{
+        grid-area: footer;
+    }
+    .isi-artikel{
+        grid-area: artikel;
+        margin: 10px;
+    }
+    .pilihan-artikel{
+        grid-area: nav;
+        margin-top: 40px;
+    }
+    .download-software{
+        grid-area: download;
+    }
+    .bagian-ketiga img, .bagian-keempat img{
+        display: block;
+        width: 200px;
+        height: 150px;
+    }
     .judul{
         font-size: 1.5rem;
         top: 30%;
@@ -307,28 +364,6 @@ footer a:hover{
     }
     .space2{
         top: 50%;
-    }
-    .kontainer-content{
-        height: 200vh;
-        grid-template-columns: 2fr 2fr 1.3fr;
-        grid-template-rows: 2fr 1fr 1fr 1fr;
-        grid-template-areas: 
-            "artikel artikel artikel"
-            "nav nav nav"
-            "nav nav nav"
-            "download download download";
-        margin: 0;
-        row-gap: 20px;
-    }
-    .isi-artikel{
-        height: 100vh;
-        margin: 0;
-    }
-    .isi-artikel p{
-        margin: 0;
-    }
-    .pilihan-artikel{
-        margin: 20px 0 0 0;
     }
     .mid{
         top: 75%;
@@ -341,7 +376,40 @@ footer a:hover{
     }
 }
 @media (max-width : 380px){
-    
+    nav img{
+        width: 70%;
+    }
+    .kontainer-content{
+        height: 910vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr 5fr 1fr .7fr .1fr;
+        grid-template-areas: 
+            "artikel"
+            "artikel"
+            "nav"
+            "download"
+            "footer";
+        column-gap: 10px;
+    }
+    footer{
+        grid-area: footer;
+    }
+    .isi-artikel{
+        grid-area: artikel;
+        margin: 10px;
+    }
+    .pilihan-artikel{
+        grid-area: nav;
+        margin-top: 40px;
+    }
+    .download-software{
+        grid-area: download;
+    }
+    .bagian-ketiga img, .bagian-keempat img{
+        display: block;
+        width: 200px;
+        height: 150px;
+    }
     .judul{
         transition: .5s all;
     }
@@ -390,20 +458,46 @@ footer a:hover{
     }
 } 
 @media (max-width : 320px){
+    nav img{
+        width: 70%;
+        padding-left: 30%;
+    }
     .icon{
         display: none;
     }
     .kontainer-content{
-        row-gap: 30px;
+        height: 910vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr 5fr 1fr .7fr .1fr;
+        grid-template-areas: 
+            "artikel"
+            "artikel"
+            "nav"
+            "download"
+            "footer";
+        column-gap: 10px;
     }
     .download-software h1{
         width: 60%;
     }
     footer{
-        top: 1450px;
+        grid-area: footer;
+    }
+    .isi-artikel{
+        grid-area: artikel;
+        margin: 10px;
     }
     .pilihan-artikel{
+        grid-area: nav;
         margin-top: 40px;
+    }
+    .download-software{
+        grid-area: download;
+    }
+    .bagian-ketiga img, .bagian-keempat img{
+        display: block;
+        width: 200px;
+        height: 150px;
     }
     .navbar{
         flex-direction: column;
