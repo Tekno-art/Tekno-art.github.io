@@ -6,7 +6,7 @@ body{
     overflow-x: hidden;
 }
 /* Button Untuk Klik Event */
-/* button{
+button{
     position: absolute;
     z-index: 99;
     top: 3%;
@@ -24,7 +24,7 @@ body{
 }
 button:hover{
     box-shadow: 0 0 20px #212121;
-} */
+}
 
 /* Navbar Atas */
 nav{
@@ -75,6 +75,11 @@ nav ul li:hover{
 .image-content img{
     margin-left: 25%;
     width: 45%;
+    transition: .5s all;
+}
+.image-content img.efek-gambar{
+    transform: scaleX(1.2);
+    margin-top: 20px;
 }
 .text-content{
     width: 28%;
@@ -125,6 +130,10 @@ nav ul li:hover{
     color: #fff;
     font-weight: bold;
     line-height: 22px;
+    transition: .5s all;
+}
+.judul-hilang{
+    opacity: 0;
 }
 .image-kosong h3{
     font-family: 'Courier New', Courier, monospace;
@@ -133,6 +142,7 @@ nav ul li:hover{
     position: absolute;
     top: 71%;
     left: -10%;
+    transition: .5s all;
 }
 .image-kosong p{
     color: #fff;
@@ -145,6 +155,11 @@ nav ul li:hover{
     opacity: 0.5;
     border-left: 2px solid #fff;
     padding-left: 30px;
+    transition: .5s all;
+}
+.image-kosong p.teks-hilang{
+    transform: translateX(20px);
+    opacity: 0;
 }
 .image-kosong i{
     background: #090322;
@@ -211,28 +226,73 @@ nav ul li:hover{
 }
 
 /* Navbar list / Animasi */
-/* .navbar-list{
+.navbar-list{
     width: 30%;
     height: 90vh;
     position: absolute;
     top: 11%;
     right: 0;
     background: #fff;
+    transform: translateX(400px);
+    transition: 1s all;
+}
+.navbar-list-klik{
+    transform: translateX(0);
+}
+.navbar-list ul{
+    transform: translateY(50px);
 }
 .navbar-list ul li{
     list-style: none;
-    margin: 30px 0 30px 0;
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    transition: .7s all;
+}
+.navbar-list ul li:hover{
     background: #090d2c;
-    padding: 20px;
+    color: #fff;
 }
 .navbar-list ul li a{
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    color: #212121;
+    padding: 20px;
+    transition: .7s all;
+    transform: translateX(-10px);
+    width: 80%;
+    text-align: right;
+}
+.navbar-list ul li a:hover{
+    padding: 40px;
     color: #fff;
-    padding: 50px;
-} */
+}
+.navbar-list ul li small{
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.7;
+    transform: translateX(270px);
+    position: relative;
+    transition: .1s all;
+}
+.navbar-list ul li small:hover{
+    color: #fff;
+    opacity: 1;
+}
+.navbar-list ul li small::before{
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background: #090322;
+    top: 10px;
+    right: 30px;
+    transition: .1s all;
+}
+.navbar-list ul li small::before:hover{
+    background: #fff;
+}
 
 /* Menu Lainnya */
 /* .teks-ket2{
